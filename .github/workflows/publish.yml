@@ -1,4 +1,4 @@
-name: Publish to NPM
+name: Build and Publish to NPM
 
 on:
   release:
@@ -13,7 +13,7 @@ jobs:
     
     permissions:
       contents: read
-      id-token: write
+      id-token: write  # Required for NPM provenance
     
     steps:
       - name: Checkout code
@@ -31,8 +31,16 @@ jobs:
       - name: Build package
         run: npm run build
       
-      - name: Publish to NPM
-        run: npm publish --access public
+      - name: Verify build output
+        run: |
+          ls -la build/
+          test -f build/index.js || exit 1
+          test -f build/ha-client.js || exit 1
+          test -f build/tools.js || exit 1
+          echo "✅ Build verification passed"
+      
+      - name: Publish to NPM with provenance
+        run: npm publish --access public --provenance
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
