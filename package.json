@@ -1,7 +1,7 @@
 {
   "name": "@coolver/mcp-home-assistant",
   "version": "1.0.0",
-  "description": "MCP server for Home Assistant - enables Cursor AI to manage your smart home through natural language",
+  "description": "Build smart home automations with AI - Cursor AI analyzes your Home Assistant and creates intelligent solutions tailored to your devices",
   "type": "module",
   "main": "./build/index.js",
   "bin": {
