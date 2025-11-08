@@ -1,10 +1,10 @@
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
 
 export const tools: Tool[] = [
-  // File Operations
+  // File Operations (Read-only)
   {
     name: 'ha_read_file',
-    description: 'Read a file from Home Assistant configuration directory. Use this to read configuration.yaml, automations.yaml, scripts.yaml, etc.',
+    description: '[READ-ONLY] Read a file from Home Assistant configuration directory. Safe operation - only reads data.',
     inputSchema: {
       type: 'object',
       properties: {
@@ -18,7 +18,7 @@ export const tools: Tool[] = [
   },
   {
     name: 'ha_write_file',
-    description: 'Write content to a file in Home Assistant configuration directory. Always commit changes after writing files.',
+    description: '[WRITE] Write content to a file in Home Assistant. MODIFIES configuration - requires approval.',
     inputSchema: {
       type: 'object',
       properties: {
@@ -36,7 +36,7 @@ export const tools: Tool[] = [
   },
   {
     name: 'ha_list_files',
-    description: 'List all files and directories in Home Assistant configuration directory',
+    description: '[READ-ONLY] List files and directories in Home Assistant. Safe operation - only reads data.',
     inputSchema: {
       type: 'object',
       properties: {
@@ -49,7 +49,7 @@ export const tools: Tool[] = [
   },
   {
     name: 'ha_delete_file',
-    description: 'Delete a file from Home Assistant configuration directory. Use with caution!',
+    description: '[WRITE] Delete a file from Home Assistant. DESTRUCTIVE - requires approval!',
     inputSchema: {
       type: 'object',
       properties: {
@@ -62,10 +62,10 @@ export const tools: Tool[] = [
     },
   },
 
-  // Entity Operations
+  // Entity Operations (Read-only)
   {
     name: 'ha_list_entities',
-    description: 'List all entities in Home Assistant, optionally filtered by domain (e.g., light, climate, sensor)',
+    description: '[READ-ONLY] List all entities in Home Assistant. Safe operation - only reads data.',
     inputSchema: {
       type: 'object',
       properties: {
@@ -78,7 +78,7 @@ export const tools: Tool[] = [
   },
   {
     name: 'ha_get_entity_state',
-    description: 'Get current state and attributes of a specific entity',
+    description: '[READ-ONLY] Get entity state and attributes. Safe operation - only reads data.',
     inputSchema: {
       type: 'object',
       properties: {
@@ -94,7 +94,7 @@ export const tools: Tool[] = [
   // Helper Operations
   {
     name: 'ha_create_helper',
-    description: 'Create a Home Assistant helper (input_boolean, input_number, input_text, etc.)',
+    description: '[WRITE] Create a Home Assistant helper. MODIFIES configuration - requires approval.',
     inputSchema: {
       type: 'object',
       properties: {
@@ -112,7 +112,7 @@ export const tools: Tool[] = [
   },
   {
     name: 'ha_list_helpers',
-    description: 'List all configured helpers in Home Assistant',
+    description: '[READ-ONLY] List all helpers in Home Assistant. Safe operation - only reads data.',
     inputSchema: {
       type: 'object',
       properties: {},
@@ -122,7 +122,7 @@ export const tools: Tool[] = [
   // Automation Operations
   {
     name: 'ha_create_automation',
-    description: 'Create a new automation in Home Assistant. Always validate the config format first.',
+    description: '[WRITE] Create new automation in Home Assistant. MODIFIES configuration - requires approval.',
     inputSchema: {
       type: 'object',
       properties: {
@@ -136,7 +136,7 @@ export const tools: Tool[] = [
   },
   {
     name: 'ha_list_automations',
-    description: 'List all automations configured in Home Assistant',
+    description: '[READ-ONLY] List all automations in Home Assistant. Safe operation - only reads data.',
     inputSchema: {
       type: 'object',
       properties: {},
@@ -146,7 +146,7 @@ export const tools: Tool[] = [
   // Script Operations
   {
     name: 'ha_create_script',
-    description: 'Create a new script in Home Assistant',
+    description: '[WRITE] Create new script in Home Assistant. MODIFIES configuration - requires approval.',
     inputSchema: {
       type: 'object',
       properties: {
@@ -160,7 +160,7 @@ export const tools: Tool[] = [
   },
   {
     name: 'ha_list_scripts',
-    description: 'List all scripts configured in Home Assistant',
+    description: '[READ-ONLY] List all scripts in Home Assistant. Safe operation - only reads data.',
     inputSchema: {
       type: 'object',
       properties: {},
@@ -170,7 +170,7 @@ export const tools: Tool[] = [
   // Git/Backup Operations
   {
     name: 'ha_git_commit',
-    description: 'Commit current Home Assistant configuration to Git. ALWAYS use this after making changes to configuration files.',
+    description: '[WRITE] Commit configuration to Git. Creates backup snapshot.',
     inputSchema: {
       type: 'object',
       properties: {
@@ -184,7 +184,7 @@ export const tools: Tool[] = [
   },
   {
     name: 'ha_git_history',
-    description: 'Get Git commit history for Home Assistant configuration',
+    description: '[READ-ONLY] Get Git commit history. Safe operation - only reads data.',
     inputSchema: {
       type: 'object',
       properties: {
@@ -197,7 +197,7 @@ export const tools: Tool[] = [
   },
   {
     name: 'ha_git_rollback',
-    description: 'Rollback Home Assistant configuration to a specific Git commit. Use with caution!',
+    description: '[WRITE] Rollback configuration to specific commit. DESTRUCTIVE - requires approval!',
     inputSchema: {
       type: 'object',
       properties: {
@@ -211,7 +211,7 @@ export const tools: Tool[] = [
   },
   {
     name: 'ha_git_diff',
-    description: 'Show differences between Git commits or view current uncommitted changes',
+    description: '[READ-ONLY] Show differences between commits. Safe operation - only reads data.',
     inputSchema: {
       type: 'object',
       properties: {
@@ -230,7 +230,7 @@ export const tools: Tool[] = [
   // System Operations
   {
     name: 'ha_check_config',
-    description: 'Validate Home Assistant configuration before reloading. ALWAYS use this before reloading config.',
+    description: '[READ-ONLY] Validate Home Assistant configuration. Safe operation - only checks, does not modify.',
     inputSchema: {
       type: 'object',
       properties: {},
@@ -238,7 +238,7 @@ export const tools: Tool[] = [
   },
   {
     name: 'ha_reload_config',
-    description: 'Reload Home Assistant configuration without full restart. Use after making changes and checking config.',
+    description: '[WRITE] Reload Home Assistant configuration. APPLIES changes - requires approval!',
     inputSchema: {
       type: 'object',
       properties: {},
@@ -246,7 +246,7 @@ export const tools: Tool[] = [
   },
   {
     name: 'ha_get_logs',
-    description: 'Get recent HA Cursor Agent logs to troubleshoot issues and see what commands are being executed',
+    description: '[READ-ONLY] Get agent logs to troubleshoot issues. Safe operation - only reads data.',
     inputSchema: {
       type: 'object',
       properties: {
