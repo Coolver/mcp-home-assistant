@@ -75,19 +75,7 @@ Install the agent in your Home Assistant:
 3. Click **CREATE TOKEN**
 4. Name it `Cursor AI` and copy the token
 
-### Step 3: Install MCP Server
-
-```bash
-npx @coolver/mcp-home-assistant
-```
-
-Or install globally:
-
-```bash
-npm install -g @coolver/mcp-home-assistant
-```
-
-### Step 4: Configure Cursor
+### Step 3: Configure Cursor
 
 Add to your `~/.cursor/mcp.json`:
 
@@ -96,7 +84,7 @@ Add to your `~/.cursor/mcp.json`:
   "mcpServers": {
     "home-assistant": {
       "command": "npx",
-      "args": ["-y", "@coolver/mcp-home-assistant"],
+      "args": ["-y", "@coolver/mcp-home-assistant@latest"],
       "env": {
         "HA_AGENT_URL": "http://homeassistant.local:8099",
         "HA_TOKEN": "YOUR_LONG_LIVED_ACCESS_TOKEN_HERE"
@@ -105,6 +93,17 @@ Add to your `~/.cursor/mcp.json`:
   }
 }
 ```
+
+**Why `@latest`?**
+- ✅ Always get the newest features and bug fixes
+- ✅ Automatic updates when you restart Cursor
+- ✅ No manual version management needed
+
+**Alternative (fixed version):**
+```json
+"args": ["-y", "@coolver/mcp-home-assistant@1.0.5"]
+```
+Use this if you want predictable, controlled updates.
 
 Or if installed globally:
 
@@ -224,7 +223,7 @@ If your agent runs on a different URL:
   "mcpServers": {
     "home-assistant": {
       "command": "npx",
-      "args": ["-y", "@coolver/mcp-home-assistant"],
+      "args": ["-y", "@coolver/mcp-home-assistant@latest"],
       "env": {
         "HA_AGENT_URL": "http://192.168.1.100:8099",
         "HA_TOKEN": "your_token_here"
