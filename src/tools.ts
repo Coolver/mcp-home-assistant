@@ -278,7 +278,7 @@ export const tools: Tool[] = [
   },
   {
     name: 'ha_hacs_status',
-    description: '[READ-ONLY] Check if HACS is installed and get version info. Safe operation - only reads data.',
+    description: '[READ-ONLY] Check if HACS is installed and get version info. ALWAYS call this FIRST when user mentions HACS or asks about custom integrations. If not installed, offer to install via ha_install_hacs. Safe operation - only reads data.',
     inputSchema: {
       type: 'object',
       properties: {},
@@ -286,7 +286,7 @@ export const tools: Tool[] = [
   },
   {
     name: 'ha_hacs_list_repositories',
-    description: '[READ-ONLY] List available HACS repositories (integrations, themes, plugins). Requires HACS to be installed and configured. Safe operation - only reads data.',
+    description: '[READ-ONLY] List available HACS repositories (integrations, themes, plugins). Requires HACS to be installed and configured. If HACS not installed, use ha_hacs_status first and offer installation. Safe operation - only reads data.',
     inputSchema: {
       type: 'object',
       properties: {},
@@ -313,7 +313,7 @@ export const tools: Tool[] = [
   },
   {
     name: 'ha_hacs_search',
-    description: '[READ-ONLY] Search HACS repositories by name, author, or description. Safe operation - only reads data.',
+    description: '[READ-ONLY] Search HACS repositories by name, author, or description. If HACS not installed yet, use ha_hacs_status first and offer to install HACS. Safe operation - only reads data.',
     inputSchema: {
       type: 'object',
       properties: {

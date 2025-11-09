@@ -2,7 +2,14 @@
 
 **Build smart home automations with AI - just describe what you want in natural language** 🏠🤖
 
-Stop manually writing YAML! This MCP server enables Cursor AI to analyze YOUR Home Assistant setup and create intelligent automations, scripts, and configurations tailored specifically to your devices.
+Transform your smart home management! This MCP server enables Cursor AI to:
+- 📝 Analyze your Home Assistant configuration and devices
+- 🏗️ Create intelligent automations, scripts, and complete systems
+- 🔍 Monitor and troubleshoot through log analysis
+- 📦 Install and manage HACS integrations (1000+ custom integrations!)
+- 🔄 Safely deploy changes with automatic Git versioning
+
+No more manual YAML editing or searching through documentation!
 
 **Example:** *"Install smart climate control for my radiators"* → AI creates 10+ automations, helpers, sensors, and scripts optimized for YOUR TRVs.
 
@@ -15,6 +22,7 @@ Built on [Model Context Protocol](https://modelcontextprotocol.io/) and powered 
 
 - 🤖 **Natural language** - describe what you want, AI builds it
 - 🎯 **Device-aware** - analyzes YOUR actual setup
+- 📦 **HACS integration** - install and manage 1000+ custom integrations via WebSocket
 - 💾 **Auto-backup** - every change saved in Git automatically
 - ⏪ **Instant rollback** - restore any previous version with one command
 - 🔄 **Component management** - automations, scripts, helpers, entities

@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.2.1] - 2025-11-09
+
+### 🧠 Tool Descriptions Enhancement
+
+**Proactive HACS Support**
+- ✅ Enhanced `ha_hacs_status` description - now instructs AI to ALWAYS check this first when HACS is mentioned
+- ✅ Updated `ha_hacs_list_repositories` - reminds to check status and offer installation if needed
+- ✅ Updated `ha_hacs_search` - same proactive installation logic
+- ✅ Better AI behavior - automatically offers HACS installation when user requests custom integrations
+
+**Impact:**
+- AI now proactively suggests HACS installation
+- Improved user experience - no need to manually discover HACS
+- Aligned with agent v2.2.2 AI Instructions
+
 ## [2.2.0] - 2025-11-09
 
 ### 🚀 MAJOR: Complete HACS Integration with WebSocket
