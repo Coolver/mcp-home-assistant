@@ -211,6 +211,23 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         );
         break;
 
+      case 'ha_hacs_search':
+        result = await haClient.hacsSearch(
+          args.query as string,
+          args.category as string
+        );
+        break;
+
+      case 'ha_hacs_update_all':
+        result = await haClient.hacsUpdateAll();
+        break;
+
+      case 'ha_hacs_repository_details':
+        result = await haClient.hacsGetRepositoryDetails(
+          args.repository_id as string
+        );
+        break;
+
       default:
         throw new Error(`Unknown tool: ${name}`);
     }

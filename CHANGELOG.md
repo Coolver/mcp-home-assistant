@@ -2,32 +2,68 @@
 
 All notable changes to this project will be documented in this file.
 
-## [2.1.0] - 2025-11-09
+## [2.2.0] - 2025-11-09
 
-### ✨ NEW: HACS Support
+### 🚀 MAJOR: Complete HACS Integration with WebSocket
 
-**One-Click HACS Installation via Cursor AI!**
+**Full HACS Management** - Browse, search, and install 1000+ integrations via Cursor AI!
 
-Added MCP tools for HACS:
+### New MCP Tools
+
+Added 7 HACS tools (4 new, 3 enhanced):
+
+**Installation:**
 - `ha_install_hacs` - Install HACS automatically
 - `ha_hacs_status` - Check if HACS is installed
-- `ha_hacs_list_repositories` - List available integrations/themes
-- `ha_hacs_install_repository` - Install from HACS store
 
-**What this means:**
-- 🎯 No more manual HACS installation!
-- 🤖 Just ask: "Install HACS"
-- 📦 Opens access to 1000+ integrations
-- ✅ AI handles: download → extract → restart → configure
+**Repository Management (NEW - WebSocket powered):**
+- `ha_hacs_list_repositories` - List all HACS repositories ✨ Enhanced
+- `ha_hacs_search` - Search by name/author/description ✨ NEW
+- `ha_hacs_install_repository` - Install from HACS ✨ Enhanced  
+- `ha_hacs_update_all` - Update all repositories ✨ NEW
+- `ha_hacs_repository_details` - Get detailed repo info ✨ NEW
 
-**Example:**
+### Features
+
+**Agent v2.2.0 adds WebSocket:**
+- Persistent WebSocket connection to Home Assistant
+- Real-time state access
+- Service calls via WebSocket
+- Auto-reconnect with backoff
+- Background task management
+
+**Full workflow now works:**
 ```
 User: "Install HACS and then install Xiaomi Gateway 3"
-AI: Installs HACS → Installs integration → Creates automations
+
+AI:
+1. Installs HACS from GitHub ✅
+2. Restarts Home Assistant ✅
+3. Waits for connection ✅
+4. Searches: "xiaomi gateway" ✅
+5. Finds: "AlexxIT/XiaomiGateway3" ✅
+6. Installs via hacs.download ✅
+7. Guides through config ✅
 ```
 
+**What you can do:**
+- 📦 "Install HACS"
+- 🔍 "Search for Xiaomi integrations in HACS"
+- ⬇️ "Install Xiaomi Gateway 3 from HACS"
+- 🔄 "Update all my HACS integrations"
+- 📊 "Show me details about the Xiaomi Gateway integration"
+
 **Requirements:**
-- HA Cursor Agent v2.1.0+
+- HA Cursor Agent v2.2.0+ (with WebSocket)
+- HACS configured via UI first time (one-time)
+
+## [2.1.0] - 2025-11-09
+
+### ✨ NEW: HACS Support (Initial)
+
+Basic HACS installation support (file operations only).
+
+**Note:** v2.1.0 only supported installation. v2.2.0 adds full repository management with WebSocket.
 
 ## [2.0.0] - 2025-11-08
 

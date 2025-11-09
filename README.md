@@ -67,7 +67,7 @@ Built on [Model Context Protocol](https://modelcontextprotocol.io/) and powered 
 Before installing, you need:
 
 1. **Home Assistant** running (any version)
-2. **[HA Cursor Agent](https://github.com/Coolver/home-assistant-cursor-agent)** v2.1.0+ installed as add-on
+2. **[HA Cursor Agent](https://github.com/Coolver/home-assistant-cursor-agent)** v2.2.0+ installed as add-on
 3. **Agent Key** from HA Cursor Agent (auto-generated on first start)
 4. **Cursor AI** editor installed
 
@@ -154,7 +154,9 @@ Just describe what you want in natural language - AI will handle the rest!
 
 Once configured, describe what you want in natural language. Cursor AI will analyze YOUR configuration and create tailored solutions:
 
-### 📦 HACS & Integrations (NEW in v2.1.0!)
+### 📦 HACS & Integrations (NEW in v2.2.0!) 🔥
+
+**Complete HACS management via WebSocket - browse 1000+ integrations!**
 
 ```
 Install HACS for me
@@ -165,21 +167,60 @@ Install HACS for me
 - Download latest HACS release from GitHub
 - Extract to custom_components/hacs
 - Restart Home Assistant
-- Verify installation
+- Wait for WebSocket connection
+- Verify installation ✅
 
 ```
-Install HACS and then install Xiaomi Gateway 3 integration
+Search for Xiaomi integrations in HACS
 ```
 
 **AI will:**
-- Install HACS (if not already installed)
-- Wait for Home Assistant to restart
-- Search for Xiaomi Gateway 3 in HACS
-- Install the integration
-- Guide you through configuration
-- Create example automations for your Xiaomi devices
+- Connect via WebSocket
+- Search HACS repository database
+- Show matching integrations with:
+  - Repository name
+  - Description
+  - Stars rating
+  - Current version
+  - Installation status
 
-**Note:** Repository browsing and installation will be enhanced in the next update with full HACS WebSocket API integration.
+```
+Install Xiaomi Gateway 3 integration from HACS
+```
+
+**AI will:**
+- Verify HACS is installed
+- Call hacs.download service via WebSocket
+- Download and install integration
+- Notify about restart requirement
+- Guide you through configuration
+- Create example automations
+
+```
+Update all my HACS integrations
+```
+
+**AI will:**
+- Call hacs.update_all service
+- Download all available updates
+- Notify about restart
+- Show what was updated
+
+**Full workflow:**
+```
+User: "Install HACS and then install Xiaomi Gateway 3 and create automations"
+
+AI:
+1. Installs HACS from GitHub ✅
+2. Restarts Home Assistant ✅
+3. Waits for connection ✅
+4. Searches for "Xiaomi Gateway 3" ✅
+5. Installs integration ✅
+6. Guides through UI configuration ✅
+7. Creates automations for your devices ✅
+```
+
+**✨ Powered by WebSocket** - real-time access to HACS data!
 
 ### 🏗️ Install Complete Systems
 
@@ -415,11 +456,14 @@ The MCP server provides these tools to Cursor AI:
 - `ha_git_rollback` - Rollback to previous version
 - `ha_git_diff` - Compare commits or view changes
 
-### 📦 HACS
-- `ha_install_hacs` - Install HACS (Home Assistant Community Store)
-- `ha_hacs_status` - Check if HACS is installed
-- `ha_hacs_list_repositories` - List available HACS repositories
-- `ha_hacs_install_repository` - Install integration/theme/plugin from HACS
+### 📦 HACS (WebSocket powered)
+- `ha_install_hacs` - Install HACS from GitHub
+- `ha_hacs_status` - Check installation status
+- `ha_hacs_list_repositories` - List all repositories (filter by category)
+- `ha_hacs_search` - Search repositories by query
+- `ha_hacs_install_repository` - Install integration/theme/plugin
+- `ha_hacs_update_all` - Update all installed repositories
+- `ha_hacs_repository_details` - Get detailed repository info
 
 ---
 

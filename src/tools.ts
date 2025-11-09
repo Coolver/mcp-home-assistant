@@ -300,15 +300,56 @@ export const tools: Tool[] = [
       properties: {
         repository: {
           type: 'string',
-          description: 'Repository name to install (e.g., "hacs/integration")',
+          description: 'Repository name to install (e.g., "AlexxIT/XiaomiGateway3")',
         },
         category: {
           type: 'string',
-          description: 'Repository category: integration, theme, plugin (default: integration)',
-          enum: ['integration', 'theme', 'plugin'],
+          description: 'Repository category: integration, theme, plugin, appdaemon, netdaemon, python_script (default: integration)',
+          enum: ['integration', 'theme', 'plugin', 'appdaemon', 'netdaemon', 'python_script'],
         },
       },
       required: ['repository'],
+    },
+  },
+  {
+    name: 'ha_hacs_search',
+    description: '[READ-ONLY] Search HACS repositories by name, author, or description. Safe operation - only reads data.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        query: {
+          type: 'string',
+          description: 'Search query (e.g., "xiaomi", "gateway", "sensor")',
+        },
+        category: {
+          type: 'string',
+          description: 'Filter by category (optional)',
+          enum: ['integration', 'theme', 'plugin', 'appdaemon', 'netdaemon', 'python_script'],
+        },
+      },
+      required: ['query'],
+    },
+  },
+  {
+    name: 'ha_hacs_update_all',
+    description: '[WRITE] Update all installed HACS repositories to latest versions. Home Assistant restart required after updates. MODIFIES configuration - requires approval!',
+    inputSchema: {
+      type: 'object',
+      properties: {},
+    },
+  },
+  {
+    name: 'ha_hacs_repository_details',
+    description: '[READ-ONLY] Get detailed information about a specific HACS repository (stars, authors, versions, etc). Safe operation - only reads data.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        repository_id: {
+          type: 'string',
+          description: 'Repository identifier (e.g., "AlexxIT/XiaomiGateway3" or part of entity_id)',
+        },
+      },
+      required: ['repository_id'],
     },
   },
 ];

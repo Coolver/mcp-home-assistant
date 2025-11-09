@@ -178,5 +178,22 @@ export class HAClient {
     const response = await this.client.post(`/api/hacs/install_repository`, { repository, category });
     return response.data;
   }
+
+  async hacsSearch(query: string, category?: string): Promise<any> {
+    const response = await this.client.get(`/api/hacs/search`, {
+      params: { query, category },
+    });
+    return response.data;
+  }
+
+  async hacsUpdateAll(): Promise<any> {
+    const response = await this.client.post(`/api/hacs/update_all`);
+    return response.data;
+  }
+
+  async hacsGetRepositoryDetails(repositoryId: string): Promise<any> {
+    const response = await this.client.get(`/api/hacs/repository/${repositoryId}`);
+    return response.data;
+  }
 }
 

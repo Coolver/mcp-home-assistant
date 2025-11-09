@@ -1,6 +1,6 @@
 {
   "name": "@coolver/mcp-home-assistant",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Build smart home automations with AI - Cursor AI analyzes your Home Assistant and creates intelligent solutions tailored to your devices",
   "type": "module",
   "main": "./build/index.js",
