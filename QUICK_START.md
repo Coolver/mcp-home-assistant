@@ -21,7 +21,7 @@ Your MCP package is **ready to publish**! ✨
 
 Go to: https://github.com/new
 
-- **Repository name:** `mcp-home-assistant`
+- **Repository name:** `home-assistant-mcp`
 - **Description:** `MCP server for Home Assistant integration with Cursor AI`
 - **Public** (important for NPM!)
 - **DON'T** add README, .gitignore, or LICENSE (we already have them)
@@ -29,7 +29,7 @@ Go to: https://github.com/new
 ### 2. Push to GitHub
 
 ```bash
-cd /Users/Coolver_1/Projects/smart-home/mcp-home-assistant
+cd /Users/Coolver_1/Projects/smart-home/home-assistant-mcp
 
 # Add remote
 git remote add origin https://github.com/Coolver/home-assistant-mcp.git
@@ -63,7 +63,7 @@ npm login
 ### Step 2: Publish!
 
 ```bash
-cd /Users/Coolver_1/Projects/smart-home/mcp-home-assistant
+cd /Users/Coolver_1/Projects/smart-home/home-assistant-mcp
 
 # Publish to NPM
 npm publish --access public
@@ -122,7 +122,8 @@ Then in `~/.cursor/mcp.json`:
 {
   "mcpServers": {
     "home-assistant": {
-      "command": "mcp-home-assistant",
+      "command": "npx",
+      "args": ["-y", "@coolver/home-assistant-mcp@latest"],
       "env": {
         "HA_AGENT_URL": "http://homeassistant.local:8099",
         "HA_TOKEN": "their_token_here"
@@ -157,7 +158,7 @@ Then in `~/.cursor/mcp.json`:
 When you want to update:
 
 ```bash
-cd /Users/Coolver_1/Projects/smart-home/mcp-home-assistant
+cd /Users/Coolver_1/Projects/smart-home/home-assistant-mcp
 
 # Make your changes...
 
