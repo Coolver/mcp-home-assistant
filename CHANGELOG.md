@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.0.5] - 2025-11-10
+
+### 🐛 Critical Bug Fix: Dashboard Apply
+
+**Fixed 422 error when applying dashboards**
+
+**Bug:**
+- Dashboard creation failed with 422 Unprocessable Entity
+- AI couldn't create dashboards
+
+**Root Cause:**
+- Parameter order mismatch in handler
+- handler passed: (config, filename, register, backup)
+- client expected: (config, backup, filename, register)
+
+**Fix:**
+- Corrected parameter order in handlers.ts
+- Matches ha-client.ts signature
+
+**Impact:**
+- ✅ Dashboard creation now works
+- ✅ AI can create and apply dashboards
+- ✅ ha_apply_dashboard fully functional
+
+**Requires:** HA Cursor Agent v2.7.2+
+
+**Version:** 3.0.5 (PATCH - critical bug fix)
+
 ## [3.0.4] - 2025-11-10
 
 ### 🏗️ REFACTOR: Modular Architecture
