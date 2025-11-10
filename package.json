@@ -32,7 +32,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Coolver/home-assistant-mcp.git"
+    "url": "git+https://github.com/Coolver/home-assistant-mcp.git"
   },
   "bugs": {
     "url": "https://github.com/Coolver/home-assistant-mcp/issues"
