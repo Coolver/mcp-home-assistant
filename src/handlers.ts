@@ -73,16 +73,14 @@ export const toolHandlers: Record<string, ToolHandler> = {
   },
 
   // Helper Operations
-  'ha_create_helper': async (client, args) => {
-    const result = await client.createHelper(args.type, args.config);
-    return jsonResponse(result);
-  },
-
   'ha_list_helpers': async (client, args) => {
     const result = await client.listHelpers();
     return jsonResponse(result);
   },
-
+  'ha_create_helper': async (client, args) => {
+    const result = await client.createHelper(args.type, args.config);
+    return jsonResponse(result);
+  },
   'ha_delete_helper': async (client, args) => {
     const result = await client.deleteHelper(args.entity_id);
     return jsonResponse(result);

@@ -93,24 +93,6 @@ export const tools: Tool[] = [
 
   // Helper Operations
   {
-    name: 'ha_create_helper',
-    description: '[WRITE] Create a Home Assistant helper. MODIFIES configuration - requires approval.',
-    inputSchema: {
-      type: 'object',
-      properties: {
-        type: {
-          type: 'string',
-          description: 'Helper type (input_boolean, input_number, input_text, input_select, input_datetime)',
-        },
-        config: {
-          type: 'object',
-          description: 'Helper configuration object',
-        },
-      },
-      required: ['type', 'config'],
-    },
-  },
-  {
     name: 'ha_list_helpers',
     description: '[READ-ONLY] List all helpers in Home Assistant. Safe operation - only reads data.',
     inputSchema: {
@@ -119,14 +101,33 @@ export const tools: Tool[] = [
     },
   },
   {
+    name: 'ha_create_helper',
+    description: '[WRITE] Create a Home Assistant helper via YAML configuration. MODIFIES configuration - requires approval. Helper will be created in YAML file and reloaded automatically.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        type: {
+          type: 'string',
+          enum: ['input_boolean', 'input_text', 'input_number', 'input_datetime', 'input_select'],
+          description: 'Helper type',
+        },
+        config: {
+          type: 'object',
+          description: 'Helper configuration (must include "name" field)',
+        },
+      },
+      required: ['type', 'config'],
+    },
+  },
+  {
     name: 'ha_delete_helper',
-    description: '[WRITE] Delete helper from Home Assistant. MODIFIES configuration - requires approval.',
+    description: '[WRITE] Delete a Home Assistant helper from YAML configuration. MODIFIES configuration - requires approval.',
     inputSchema: {
       type: 'object',
       properties: {
         entity_id: {
           type: 'string',
-          description: 'Helper entity ID to delete (e.g., "input_boolean.my_helper")',
+          description: 'Full entity ID of helper to delete (e.g., "input_boolean.my_switch")',
         },
       },
       required: ['entity_id'],
