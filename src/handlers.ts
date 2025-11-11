@@ -83,6 +83,11 @@ export const toolHandlers: Record<string, ToolHandler> = {
     return jsonResponse(result);
   },
 
+  'ha_delete_helper': async (client, args) => {
+    const result = await client.deleteHelper(args.entity_id);
+    return jsonResponse(result);
+  },
+
   // Automation Operations
   'ha_create_automation': async (client, args) => {
     const result = await client.createAutomation(args.config);
@@ -91,6 +96,11 @@ export const toolHandlers: Record<string, ToolHandler> = {
 
   'ha_list_automations': async (client, args) => {
     const result = await client.listAutomations();
+    return jsonResponse(result);
+  },
+
+  'ha_delete_automation': async (client, args) => {
+    const result = await client.deleteAutomation(args.automation_id);
     return jsonResponse(result);
   },
 
@@ -103,6 +113,11 @@ export const toolHandlers: Record<string, ToolHandler> = {
   'ha_list_scripts': async (client, args) => {
     const result = await client.listScripts();
     return jsonResponse(result);
+  },
+
+  'ha_delete_script': async (client, args) => {
+    await client.deleteScript(args.script_id);
+    return successResponse(`Script deleted: ${args.script_id}`);
   },
 
   // Git/Backup Operations

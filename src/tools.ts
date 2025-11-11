@@ -118,6 +118,20 @@ export const tools: Tool[] = [
       properties: {},
     },
   },
+  {
+    name: 'ha_delete_helper',
+    description: '[WRITE] Delete helper from Home Assistant. MODIFIES configuration - requires approval.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        entity_id: {
+          type: 'string',
+          description: 'Helper entity ID to delete (e.g., "input_boolean.my_helper")',
+        },
+      },
+      required: ['entity_id'],
+    },
+  },
 
   // Automation Operations
   {
@@ -142,6 +156,20 @@ export const tools: Tool[] = [
       properties: {},
     },
   },
+  {
+    name: 'ha_delete_automation',
+    description: '[WRITE] Delete automation from Home Assistant. MODIFIES configuration - requires approval.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        automation_id: {
+          type: 'string',
+          description: 'Automation ID to delete (e.g., "my_automation")',
+        },
+      },
+      required: ['automation_id'],
+    },
+  },
 
   // Script Operations
   {
@@ -164,6 +192,20 @@ export const tools: Tool[] = [
     inputSchema: {
       type: 'object',
       properties: {},
+    },
+  },
+  {
+    name: 'ha_delete_script',
+    description: '[WRITE] Delete script from Home Assistant. MODIFIES configuration - requires approval.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        script_id: {
+          type: 'string',
+          description: 'Script ID to delete (e.g., "my_script")',
+        },
+      },
+      required: ['script_id'],
     },
   },
 

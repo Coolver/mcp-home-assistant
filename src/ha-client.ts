@@ -91,8 +91,9 @@ export class HAClient {
     return response.data;
   }
 
-  async deleteHelper(entityId: string): Promise<void> {
-    await this.client.delete(`/api/helpers/delete/${entityId}`);
+  async deleteHelper(entityId: string): Promise<any> {
+    const response = await this.client.delete(`/api/helpers/delete/${entityId}`);
+    return response.data;
   }
 
   // Automations API
@@ -106,8 +107,9 @@ export class HAClient {
     return response.data.automations;
   }
 
-  async deleteAutomation(automationId: string): Promise<void> {
-    await this.client.delete(`/api/automations/delete/${automationId}`);
+  async deleteAutomation(automationId: string): Promise<any> {
+    const response = await this.client.delete(`/api/automations/delete/${automationId}`);
+    return response.data;
   }
 
   // Scripts API
@@ -121,8 +123,9 @@ export class HAClient {
     return response.data.scripts;
   }
 
-  async deleteScript(scriptId: string): Promise<void> {
-    await this.client.delete(`/api/scripts/delete/${scriptId}`);
+  async deleteScript(scriptId: string): Promise<any> {
+    const response = await this.client.delete(`/api/scripts/delete/${scriptId}`);
+    return response.data;
   }
 
   // Git/Backup API
