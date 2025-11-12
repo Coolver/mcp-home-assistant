@@ -554,6 +554,57 @@ MIT © Vladimir Eremeev
 
 ---
 
+## 🔧 Development
+
+### Project Structure
+
+```
+home-assistant-mcp/
+├── package.json            # NPM package config
+├── tsconfig.json           # TypeScript config
+├── src/
+│   ├── index.ts           # MCP server entry point
+│   ├── ha-client.ts       # HA Agent API client
+│   ├── handlers.ts        # Tool request handlers
+│   ├── tools.ts           # Legacy tool definitions
+│   └── tools/             # Modular tool definitions
+│       ├── index.ts       # Tool exports
+│       ├── files.ts       # File operation tools
+│       ├── system.ts      # System operation tools
+│       └── dashboard.ts   # Dashboard tools
+├── build/                 # Compiled JavaScript output
+├── README.md
+├── CHANGELOG.md
+└── QUICK_START.md
+```
+
+### Local Development
+
+```bash
+# Install dependencies
+npm install
+
+# Build
+npm run build
+
+# Test locally
+export HA_AGENT_URL="http://homeassistant.local:8099"
+export HA_AGENT_KEY="your_dev_key"
+node build/index.js
+```
+
+### Architecture
+
+**MCP Server** (`index.ts`) ← Communication Protocol  
+↓  
+**Tool Handlers** (`handlers.ts`) ← Business Logic  
+↓  
+**HA Client** (`ha-client.ts`) ← HTTP API Wrapper  
+↓  
+**HA Cursor Agent** (REST API) ← Home Assistant Integration
+
+---
+
 ## 🙏 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
