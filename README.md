@@ -519,6 +519,18 @@ The MCP server provides these tools to Cursor AI:
 2. Verify the URL in `HA_AGENT_URL`
 3. Make sure port 8099 is not blocked by firewall
 
+### "spawn npx ENOENT" error
+
+This error means Node.js is not installed or not found in your system PATH.
+
+**Solution:** Install Node.js (v18.0.0 or higher) on the computer where Cursor is running:
+
+1. Download and install Node.js from [https://nodejs.org](https://nodejs.org)
+2. Restart Cursor completely after installation
+3. Verify installation by running `node --version` in a terminal
+
+**Important:** Node.js must be installed on **your computer** (where Cursor runs), not on the Home Assistant server.
+
 ### Check Agent Logs
 
 Ask Cursor AI:
