@@ -173,6 +173,13 @@ export class HAClient {
     return response.data;
   }
 
+  async getLogbookEntries(params: Record<string, any> = {}): Promise<any> {
+    const response = await this.client.get(`/api/logbook`, {
+      params,
+    });
+    return response.data;
+  }
+
   async healthCheck(): Promise<any> {
     const response = await this.client.get(`/api/health`);
     return response.data;

@@ -160,6 +160,11 @@ export const toolHandlers: Record<string, ToolHandler> = {
     return jsonResponse(result);
   },
 
+  'ha_logbook_entries': async (client, args) => {
+    const result = await client.getLogbookEntries(args || {});
+    return jsonResponse(result);
+  },
+
   // HACS Operations
   'ha_install_hacs': async (client, args) => {
     const result = await client.hacsInstall();

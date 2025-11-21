@@ -320,6 +320,54 @@ export const tools: Tool[] = [
     },
   },
   {
+    name: 'ha_logbook_entries',
+    description: '[READ-ONLY] Fetch Home Assistant logbook entries for analyzing automations, scripts, and other events.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        start_time: {
+          type: 'string',
+          description: 'ISO timestamp (UTC) for the start of the window. Optional if lookback_minutes is provided.',
+        },
+        end_time: {
+          type: 'string',
+          description: 'ISO timestamp (UTC) for the end of the window. Defaults to now.',
+        },
+        lookback_minutes: {
+          type: 'number',
+          description: 'Lookback window in minutes when start_time is omitted (default: 120).',
+        },
+        limit: {
+          type: 'number',
+          description: 'Maximum number of entries to return (default: 100).',
+        },
+        entity_id: {
+          type: 'string',
+          description: 'Filter by a single entity_id (e.g., "script.my_script").',
+        },
+        entity_ids: {
+          type: 'array',
+          description: 'List of entity_ids to include (comma-separated or repeated query values).',
+          items: { type: 'string' },
+        },
+        domains: {
+          type: 'array',
+          description: 'Filter by domains (e.g., automation, script, light).',
+          items: { type: 'string' },
+        },
+        event_types: {
+          type: 'array',
+          description: 'Filter by logbook event types (e.g., automation_triggered, script_started).',
+          items: { type: 'string' },
+        },
+        search: {
+          type: 'string',
+          description: 'Case-insensitive search string for name/message/entity_id.',
+        },
+      },
+    },
+  },
+  {
     name: 'ha_install_hacs',
     description: '[WRITE] Install HACS (Home Assistant Community Store). Downloads latest HACS from GitHub, installs to custom_components, and restarts Home Assistant. Opens access to 1000+ integrations. MODIFIES configuration - requires approval!',
     inputSchema: {
