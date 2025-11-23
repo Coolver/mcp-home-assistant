@@ -134,6 +134,16 @@ export const toolHandlers: Record<string, ToolHandler> = {
     return jsonResponse(result);
   },
 
+  'ha_create_checkpoint': async (client, args) => {
+    const result = await client.createCheckpoint(args.user_request);
+    return jsonResponse(result);
+  },
+
+  'ha_end_checkpoint': async (client, args) => {
+    const result = await client.endCheckpoint();
+    return jsonResponse(result);
+  },
+
   'ha_git_rollback': async (client, args) => {
     const result = await client.gitRollback(args.commit_hash);
     return jsonResponse(result);

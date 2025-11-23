@@ -355,6 +355,19 @@ export class HAClient {
     return response.data;
   }
 
+  // Checkpoint API
+  async createCheckpoint(userRequest: string): Promise<any> {
+    const response = await this.client.post(`/api/backup/checkpoint`, null, {
+      params: { user_request: userRequest },
+    });
+    return response.data;
+  }
+
+  async endCheckpoint(): Promise<any> {
+    const response = await this.client.post(`/api/backup/checkpoint/end`);
+    return response.data;
+  }
+
   // Service API
   async callService(domain: string, service: string, serviceData?: any, target?: any): Promise<any> {
     const response = await this.client.post(`/api/entities/call_service`, {

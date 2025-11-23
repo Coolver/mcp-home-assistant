@@ -271,6 +271,28 @@ export const tools: Tool[] = [
     },
   },
   {
+    name: 'ha_create_checkpoint',
+    description: '[WRITE] Create checkpoint with tag at the start of user request processing. This should be called automatically at the beginning of each user request to save current state before making changes. Creates a commit and tag with timestamp and user request description. Disables auto-commits during request processing.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        user_request: {
+          type: 'string',
+          description: 'Description of the user request (e.g., "Create nice_dark theme with dark blue header")',
+        },
+      },
+      required: ['user_request'],
+    },
+  },
+  {
+    name: 'ha_end_checkpoint',
+    description: '[WRITE] End request processing checkpoint. Re-enables auto-commits. Should be called at the end of user request processing.',
+    inputSchema: {
+      type: 'object',
+      properties: {},
+    },
+  },
+  {
     name: 'ha_git_diff',
     description: '[READ-ONLY] Show differences between commits. Safe operation - only reads data.',
     inputSchema: {
