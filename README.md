@@ -112,6 +112,15 @@ Before installing, you need:
 
 ## 🚀 Quick Start (5 minutes)
 
+### Step 0: Install Node.js (if not already installed)
+
+The MCP server requires Node.js to run on your computer (where Cursor is installed):
+
+1. Check if Node.js is already installed: open terminal and run `node --version`
+2. If not installed or version is below v18.0.0, download and install from **[nodejs.org](https://nodejs.org)**
+3. After installation, verify: `node --version` should show v18.0.0 or higher
+4. **Important:** Install Node.js on the computer where Cursor runs, not on the Home Assistant server
+
 ### Step 1: Install HA Cursor Agent
 
 Install the agent in your Home Assistant:
