@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.2.8] - 2025-12-06
+
+### 📝 Documentation Update
+
+- ✅ Updated README.md with improved documentation
+
 ## [3.2.7] - 2025-12-06
 
 ### ✨ Feature: Meaningful Git Commit Messages
