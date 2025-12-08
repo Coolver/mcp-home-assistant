@@ -1,5 +1,5 @@
 {
-  "name": "@Coolver/home-assistant-mcp",
+  "name": "@coolver/home-assistant-mcp",
   "version": "3.2.12",
   "mcpName": "io.github.Coolver/home-assistant-mcp",
   "mcpDisplayName": "Home Assistant Vibecode MCP",
