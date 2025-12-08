@@ -1,7 +1,9 @@
 {
   "name": "@coolver/home-assistant-mcp",
   "version": "3.2.9",
-  "description": "Build smart home automations with AI - Cursor AI analyzes your Home Assistant and creates intelligent solutions tailored to your devices",
+  "mcpName": "io.github.coolver/home-assistant-mcp",
+  "mcpDisplayName": "Home Assistant Vibecode MCP",
+  "description": "Enable Cursor, VS Code, Claude Code or any MCP-enabled IDE to help you vibecode and manage Home Assistant: create automations, design dashboards, tweak themes, modify configs, and deploy changes using natural language",
   "type": "module",
   "main": "./build/index.js",
   "bin": "./build/index.js",
@@ -19,8 +21,11 @@
   "keywords": [
     "mcp",
     "home-assistant",
+    "vibe-code",
     "cursor",
-    "cursor-ai",
+    "vs-code",
+    "co-pilot",
+    "claude-code",
     "ai",
     "smart-home",
     "model-context-protocol",
