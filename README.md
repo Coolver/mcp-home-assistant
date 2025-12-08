@@ -1,17 +1,21 @@
 # MCP Home Assistant
 
-**Build smart home automations with AI - just describe what you want in natural language** 🏠🤖
+**Let AI build your Home Assistant automations – just describe what you want in natural language** 🏠🤖
 
 **You should start by installing the Home Assistant Vibecode Agent:** https://github.com/Coolver/home-assistant-cursor-agent
 
-Transform your smart home management! This MCP server enables Cursor AI, Visual Studio Code or your favourite IDE with MCP support to:
-- 📝 Analyze your Home Assistant configuration and devices
-- 🏗️ Create intelligent automations, scripts, and complete systems
-- 🔍 Monitor and troubleshoot through log analysis
-- 📦 Install and manage HACS integrations (1000+ custom integrations!)
-- 🔄 Safely deploy changes with automatic Git versioning
+You describe your goal → AI inspects your Home Assistant → designs a custom solution → and deploys it on-board automatically. 🚀
+Transform the way you manage your smart home. This add-on enables **Cursor**, **Visual Studio Code (VS Code)**, or any **MCP-enabled IDE** to:
 
-No more manual YAML editing or searching through documentation!
+- 📝 Analyze your Home Assistant configuration, entities, and devices  
+- 🏗️ Create intelligent automations, scripts, and complete systems — including Home Assistant helpers that can be fully managed programmatically  
+- 🎨 Design and customize Lovelace dashboards with full control over cards, layouts, and styling  
+- 🖌️ Create and tweak themes for a personalized UI  
+- 🔄 Safely deploy changes with automatic Git-based versioning  
+- 🔍 Monitor and troubleshoot your setup through log analysis  
+- 📦 Install and manage HACS integrations and custom repositories  
+
+No more manual YAML editing or searching through documentation - just describe what you want in natural language!
 
 **Example:** *"Install smart climate control for my radiators"* → AI creates 10+ automations, helpers, sensors, and scripts optimized for YOUR TRVs.
 
@@ -22,83 +26,81 @@ Built on [Model Context Protocol](https://modelcontextprotocol.io/) and powered 
 
 ### ✨ Key Features
 
-- 🤖 **Natural language** - describe what you want, AI builds it
-- 🎯 **Device-aware** - analyzes YOUR actual setup
-- 📦 **HACS integration** - install and manage 1000+ custom integrations via WebSocket
-- 💾 **Auto-backup** - every change saved in Git automatically with meaningful commit messages
-- 📝 **Meaningful commits** - AI automatically generates descriptive commit messages explaining what and why changed
-- ⏪ **Instant rollback** - restore any previous version with one command
-- 🔄 **Component management** - automations, scripts, helpers, entities
-- 📊 **Log analysis** - monitor system behavior, detect anomalies, suggest optimizations
-- 🐛 **Debug assistance** - AI reads logs and identifies issues automatically
+### 🔍 Analyze your setup
+
+✅ Read your full configuration — entities, automations, scripts, helpers  
+✅ Understand your devices — capabilities, relations, and usage patterns  
+✅ Learn existing logic — analyze how your current automations and scripts behave  
 
 ---
 
-## 🎯 What can you do?
+### 🏗️ Build intelligence
 
-**AI assistants analyze your actual Home Assistant configuration and create smart automations tailored to YOUR devices:**
+✅ Create complete systems — multiple interconnected automations in seconds  
+✅ Generate helpers and sensors — tailored to your actual setup and needs  
+✅ Write optimized scripts — based on real entities, areas, and devices  
+✅ Refactor existing logic — improve or merge automations instead of starting from scratch  
 
-### 🏗️ Build Complex Systems from Scratch
+---
 
-- 💬 *"Install HACS and then install Xiaomi Gateway 3 integration"*
-- 💬 *"Install a smart climate control system for my TRV radiators with predictive shutdown and buffer mode"*
-- 💬 *"Create a presence-based lighting system using my motion sensors and schedule"*
-- 💬 *"Set up energy monitoring with notifications when consumption is high"*
+### 📊 Dashboards & UI
 
-**AI will:**
-1. ✅ Read your current configuration
-2. ✅ Detect your devices and entities
-3. ✅ Create automations, scripts, helpers
-4. ✅ Test and validate everything
-5. ✅ Deploy - all automatically!
+✅ Create and update Lovelace dashboards — fully programmatically  
+✅ Add, remove, or rearrange cards — stat, graphs, history, custom cards, and more  
+✅ Control layouts and views — organize rooms, areas, and scenarios  
+✅ Design and tweak themes — colors, typography, and styles for a personalized UI  
 
-### 📦 Extend with Community Integrations
+---
 
-- 💬 *"Install HACS for me"*
-- 💬 *"Search for Xiaomi integrations in HACS"*
-- 💬 *"Install Xiaomi Gateway 3 from HACS"*
-- 💬 *"What themes are available in HACS?"*
-- 💬 *"Update all my HACS repositories"*
+### 🔒 Safe operations
 
-**AI will:**
-1. ✅ Install HACS automatically
-2. ✅ Search 1000+ community repositories
-3. ✅ Install integrations, themes, plugins
-4. ✅ Keep everything updated
+✅ Git-based versioning — every change is tracked with meaningful commit messages  
+✅ Human-readable commits — AI explains *what* changed and *why*  
+✅ Configuration validation — test before apply to reduce breaking changes  
+✅ One-click rollback — revert to a previous state if something goes wrong  
+✅ Activity log — full audit trail of what the agent did and when  
 
-### 🔌 Manage Add-ons & Services
+---
 
-- 💬 *"Install Zigbee2MQTT and configure it for my Sonoff dongle"*
-- 💬 *"Setup Mosquitto MQTT broker"*
-- 💬 *"Install Node-RED for visual automations"*
-- 💬 *"My Zigbee2MQTT isn't working - check the logs and fix it"*
-- 💬 *"Update all my add-ons"*
+### 📦 Extend with the community
 
-**AI will:**
-1. ✅ Install add-ons (Zigbee2MQTT, Node-RED, ESPHome)
-2. ✅ Auto-detect hardware (USB coordinators)
-3. ✅ Configure options
-4. ✅ Start/stop/restart services
-5. ✅ Monitor logs and troubleshoot
+✅ Install and configure HACS — unlock 1000+ community integrations  
+✅ Search repositories — themes, plugins, custom components, dashboards  
+✅ Install integrations — one-command setup for new HACS components  
+✅ Keep things fresh — update all HACS repositories from a single place  
 
-### 🔧 Intelligent Configuration
+---
 
-- 💬 *"Optimize my heating system based on room priorities and occupancy patterns"*
-- 💬 *"Create smart scenes for movie night using my actual lights and media devices"*
-- 💬 *"Build a security system with my door sensors and cameras"*
+**Result:**  
+You describe your goal → AI inspects your Home Assistant → designs a custom solution → and deploys it on-board automatically. 🚀
 
-### 🐛 Debug and Fix Issues
+---
 
-- 💬 *"Why isn't my bedroom automation working? Check the logs and fix it"*
-- 💬 *"My climate control keeps turning off early - analyze and improve the logic"*
+### 🚀 How is this different from other MCP modules for Home Assistant?
 
-### 📊 Monitor and Analyze
+Most MCP integrations I’ve seen for Cursor, VS Code or Claude work only on your local machine and talk to Home Assistant over SSH and sometimes the REST API.
 
-- 💬 *"Analyze my logs and tell me if my heating system is working efficiently"*
-- 💬 *"Check if my automations are triggering too often or missing events"*
-- 💬 *"Compare actual system behavior with expected logic and suggest improvements"*
+For serious Home Assistant work, that’s not really enough:
 
-**No manual YAML editing. No copy-pasting. Just describe what you want!** 🚀
+Home Assistant is not just a bunch of YAML files.
+It exposes multiple internal APIs, and some of the most important ones are only available from inside HA itself over the WebSocket API.
+
+When you access HA only via SSH, the AI usually has to generate and upload a helper script on every request, then execute it blindly on the host.
+Since that script can be different every time, each request is a bit of a black box — more like playing Russian roulette than doing reliable automation.
+
+Because of that, I chose a different architecture.
+
+This project is **split into two modules**:
+
+**Home Assistant Agent** (this module) – runs inside Home Assistant (as an add-on),
+has native access to all relevant APIs, files and services,
+and exposes a safe, well-defined interface for external tools.
+
+**Home Assistant MCP server** – runs on your computer alongside your AI IDE (Cursor, VS Code, etc.)
+and talks to the Agent over a controlled API instead of SSH hacks (installation steps below)
+
+This design makes working with Home Assistant faster, more predictable, safer and repeatable.
+Your AI IDE gets exactly the actions and data it needs — through a stable API — instead of constantly inventing ad-hoc scripts and hoping they behave correctly.
 
 ---
 
@@ -109,7 +111,7 @@ Before installing, you need:
 1. **Home Assistant** running (any version)
 2. **[HA Vibecode Agent](https://github.com/Coolver/home-assistant-cursor-agent)** v2.2.0+ installed as add-on
 3. **Agent Key** from HA Vibecode Agent (auto-generated on first start)
-4. **AI-enabled editor** installed (Cursor AI or VS Code + GitHub Copilot)
+4. **AI-enabled editor** installed (Cursor, VS Code + GitHub Copilot, Claude Code etc)
 
 ---
 
@@ -171,248 +173,6 @@ Just describe what you want in natural language - AI will handle the rest!
 
 ---
 
-## 💬 Real-World Examples
-
-Once configured, describe what you want in natural language. Your AI assistant will analyze YOUR configuration and create tailored solutions:
-
-### 📦 HACS & Integrations (NEW in v2.2.0!) 🔥
-
-**Complete HACS management via WebSocket - browse 1000+ integrations!**
-
-```
-Install HACS for me
-```
-
-**AI will:**
-- Check if HACS is already installed
-- Download latest HACS release from GitHub
-- Extract to custom_components/hacs
-- Restart Home Assistant
-- Wait for WebSocket connection
-- Verify installation ✅
-
-```
-Search for Xiaomi integrations in HACS
-```
-
-**AI will:**
-- Connect via WebSocket
-- Search HACS repository database
-- Show matching integrations with:
-  - Repository name
-  - Description
-  - Stars rating
-  - Current version
-  - Installation status
-
-```
-Install Xiaomi Gateway 3 integration from HACS
-```
-
-**AI will:**
-- Verify HACS is installed
-- Call hacs.download service via WebSocket
-- Download and install integration
-- Notify about restart requirement
-- Guide you through configuration
-- Create example automations
-
-```
-Update all my HACS integrations
-```
-
-**AI will:**
-- Call hacs.update_all service
-- Download all available updates
-- Notify about restart
-- Show what was updated
-
-**Full workflow:**
-```
-User: "Install HACS and then install Xiaomi Gateway 3 and create automations"
-
-AI:
-1. Installs HACS from GitHub ✅
-2. Restarts Home Assistant ✅
-3. Waits for connection ✅
-4. Searches for "Xiaomi Gateway 3" ✅
-5. Installs integration ✅
-6. Guides through UI configuration ✅
-7. Creates automations for your devices ✅
-```
-
-**✨ Powered by WebSocket** - real-time access to HACS data!
-
-### 🏗️ Install Complete Systems
-
-```
-Install a smart climate control system for my home. 
-Analyze my TRV radiators, create automations for efficient 
-heating with predictive shutdown, and set up a dashboard.
-```
-
-**AI will:**
-- Detect your TRV entities
-- Create 8-10 automations for smart heating
-- Add helper entities for system state
-- Create template sensors for monitoring
-- Set up scripts for boiler control
-- Generate Lovelace dashboard
-- Test everything and deploy
-
-```
-Build a presence detection system using my phone trackers 
-and create automations for lights, climate, and security.
-```
-
-**AI will:**
-- Find your device_tracker entities
-- Create zones and presence helpers
-- Set up lighting automations per room
-- Configure climate based on presence
-- Add security notifications
-- All tailored to YOUR devices!
-
-### 🔧 Optimize Existing Systems
-
-```
-My heating system wastes energy. Analyze my current 
-automations and optimize for efficiency while maintaining comfort.
-```
-
-**AI will:**
-- Read current automations
-- Analyze heating patterns
-- Add predictive logic
-- Implement adaptive cooldowns
-- Keep your existing setup intact
-
-### 🐛 Debug and Fix Issues
-
-```
-My bedroom lights automation isn't working properly. 
-Check the logs, analyze the automation, and fix the issue.
-```
-
-**AI will:**
-- Read automation configuration
-- Check entity states
-- Review agent logs for errors
-- Identify the problem
-- Fix and test the solution
-
-### 📊 Monitor & Analyze System Behavior
-
-**Cursor AI can read logs and analyze how your system actually works:**
-
-```
-Read the logs and analyze how my climate control system 
-is performing. Is it working as expected?
-```
-
-**AI will:**
-- Read Home Assistant logs
-- Analyze automation triggers and actions
-- Compare actual behavior vs. expected logic
-- Identify deviations or inefficiencies
-- Provide detailed performance report
-
-```
-My heating system seems inefficient. Analyze the logs 
-from the past day and suggest improvements.
-```
-
-**AI will:**
-- Extract relevant log entries
-- Identify patterns (frequent on/off cycles, timing issues)
-- Detect edge cases or unexpected behavior
-- Calculate metrics (runtime, cycles, efficiency)
-- Suggest specific optimizations
-
-```
-Monitor my automations and tell me if they're triggering 
-too often or missing important events.
-```
-
-**AI will:**
-- Track automation execution frequency
-- Identify over-triggering or under-triggering
-- Spot missing conditions or edge cases
-- Recommend refinements to triggers and conditions
-
-**Use cases:**
-- 🔍 **Performance audit** - "Are my automations running efficiently?"
-- ⚠️ **Anomaly detection** - "Did anything unusual happen yesterday?"
-- 📈 **Usage analysis** - "How often does my security system trigger?"
-- 🎯 **Optimization** - "Can we reduce the number of automation runs?"
-- 🐛 **Root cause analysis** - "Why did the boiler turn off unexpectedly?"
-
-### 🎨 Create Custom Solutions
-
-```
-I want movie mode: dim all lights, close blinds, 
-turn on TV and soundbar. Create scenes and automations.
-```
-
-**AI will:**
-- Detect your lights, covers, media devices
-- Create input_boolean for movie mode
-- Build automation with all steps
-- Add script for easy activation
-- Customize based on YOUR devices
-
-### 💾 Git Versioning & Rollback
-
-**Every change is automatically backed up in Git with meaningful commit messages!** You can view history and rollback anytime.
-
-**Meaningful Commit Messages:**
-- AI automatically generates descriptive commit messages based on what you're doing
-- Messages explain **what** changed and **why** (e.g., "Add automation: Control lights when motion detected")
-- You can provide additional context via `description` parameter for even more clarity
-- See [COMMIT_MESSAGES.md](./COMMIT_MESSAGES.md) for examples and best practices
-
-```
-Show me the last 10 changes to my configuration
-```
-
-**AI will:**
-- Display commit history with messages
-- Show what was changed and when
-- Help you identify specific versions
-
-```
-Something broke! Rollback to the version from yesterday
-```
-
-**AI will:**
-- Show recent commits
-- Find the commit from yesterday
-- Rollback your configuration
-- Verify everything works
-
-```
-Show me what changed in commit abc123
-```
-
-**AI will:**
-- Display detailed diff of that commit
-- Explain what files were modified
-- Help you understand the changes
-
-**Available Git tools:**
-- `ha_git_history` - View commit history (last 20 commits)
-- `ha_git_diff` - Compare commits or see uncommitted changes
-- `ha_git_rollback` - Restore to any previous version
-- `ha_git_commit` - Manual backup with custom message
-
-**Example workflow:**
-1. Make changes → Automatically backed up ✅
-2. Something breaks? → Ask AI to show history
-3. AI shows commits → You identify good version
-4. AI rolls back → Everything restored! 🎉
-
----
-
 ## 🔧 Configuration
 
 ### Environment Variables
@@ -443,57 +203,6 @@ If your agent runs on a different URL:
 
 ---
 
-## 🛠️ Available Tools
-
-The MCP server provides these tools to AI assistants:
-
-### 📁 Files
-- `ha_read_file` - Read configuration files
-- `ha_write_file` - Write configuration files
-- `ha_list_files` - List files in directory
-- `ha_delete_file` - Delete files
-
-### 🏠 Entities
-- `ha_list_entities` - List all entities (with domain filter)
-- `ha_get_entity_state` - Get specific entity state
-
-### 🔧 Helpers
-- `ha_list_helpers` - List all input helpers
-- `ha_create_helper` - Create new input helper
-- `ha_delete_helper` - Delete helper
-
-### 🤖 Automations
-- `ha_list_automations` - List all automations
-- `ha_create_automation` - Create new automation
-- `ha_delete_automation` - Delete automation
-
-### 📜 Scripts
-- `ha_list_scripts` - List all scripts
-- `ha_create_script` - Create new script
-- `ha_delete_script` - Delete script
-
-### 🔄 System
-- `ha_check_config` - Check configuration validity
-- `ha_reload_config` - Reload configuration
-- `ha_get_logs` - Get agent logs
-
-### 💾 Backup
-- `ha_git_commit` - Commit changes to git
-- `ha_git_history` - View git history
-- `ha_git_rollback` - Rollback to previous version
-- `ha_git_diff` - Compare commits or view changes
-
-### 📦 HACS (WebSocket powered)
-- `ha_install_hacs` - Install HACS from GitHub
-- `ha_hacs_status` - Check installation status
-- `ha_hacs_list_repositories` - List all repositories (filter by category)
-- `ha_hacs_search` - Search repositories by query
-- `ha_hacs_install_repository` - Install integration/theme/plugin
-- `ha_hacs_update_all` - Update all installed repositories
-- `ha_hacs_repository_details` - Get detailed repository info
-
----
-
 ## 🐛 Troubleshooting
 
 ### "Invalid Agent Key" error
@@ -519,7 +228,7 @@ This error means Node.js is not installed or not found in your system PATH.
 2. Restart Cursor completely after installation
 3. Verify installation by running `node --version` in a terminal
 
-**Important:** Node.js must be installed on **your computer** (where Cursor runs), not on the Home Assistant server.
+**Important:** Node.js must be installed on **your computer** (where Cursor, VS Code, Claude or other IDE runs), not on the Home Assistant server.
 
 ### Check Agent Logs
 
@@ -538,7 +247,7 @@ This will display what's happening in the agent.
 - ✅ Agent Key authentication for MCP clients
 - ✅ Agent validates Agent Key for all requests
 - ✅ Agent uses internal SUPERVISOR_TOKEN for Home Assistant API operations
-- ✅ Your Agent Key is stored only in local Cursor config file
+- ✅ Your Agent Key is stored only in local IDE config file
 - ⚠️ **Never commit `mcp.json` with your Agent Key to git!**
 
 ---
@@ -580,21 +289,6 @@ home-assistant-mcp/
 └── QUICK_START.md
 ```
 
-### Local Development
-
-```bash
-# Install dependencies
-npm install
-
-# Build
-npm run build
-
-# Test locally
-export HA_AGENT_URL="http://homeassistant.local:8099"
-export HA_AGENT_KEY="your_dev_key"
-node build/index.js
-```
-
 ### Architecture
 
 **MCP Server** (`index.ts`) ← Communication Protocol  
@@ -603,7 +297,7 @@ node build/index.js
 ↓  
 **HA Client** (`ha-client.ts`) ← HTTP API Wrapper  
 ↓  
-**HA Vibecode Agent** (REST API) ← Home Assistant Integration
+**HA Vibecode Agent** (https://github.com/Coolver/home-assistant-vibecode-agent) (REST API) ← Home Assistant Integration
 
 ---
 
