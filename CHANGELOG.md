@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.2.11] - 2025-12-06
+
+### ✨ New Feature
+
+- ✅ Added `server.json` configuration file for MCP server registry integration
+
 ## [3.2.10] - 2025-12-06
 
 ### 📝 Documentation Update

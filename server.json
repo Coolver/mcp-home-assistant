@@ -6,19 +6,19 @@
     "url": "https://github.com/Coolver/home-assistant-mcp",
     "source": "github"
   },
-  "version": "3.2.10",
+  "version": "3.2.11",
   "packages": [
     {
       "registryType": "npm",
       "identifier": "@coolver/home-assistant-mcp",
-      "version": "3.2.10",
+      "version": "3.2.11",
       "transport": {
         "type": "stdio"
       },
       "environmentVariables": [
         {
           "name": "HA_AGENT_URL",
-          "description": "URL of your on-board Home Assistant Vibecode Agent add-on (for example: http://homeassistant.local:8099)",
+          "description": "URL of your on-board Home Assistant Vibecode Agent add-on (generated after installation of the add-on)",
           "isRequired": true,
           "format": "string",
           "isSecret": false
