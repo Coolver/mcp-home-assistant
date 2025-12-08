@@ -1,7 +1,7 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-10-17/server.schema.json",
   "name": "io.github.Coolver/home-assistant-mcp",
-  "description": "Enable Cursor, VS Code, Claude Code or any MCP-enabled IDE to help you vibecode and manage Home Assistant: create automations, design dashboards, tweak themes, modify configs, and deploy changes using natural language",
+  "description": "Vibecode your Home Assistant setup from your IDE: automations, dashboards, themes and configs",
   "repository": {
     "url": "https://github.com/Coolver/home-assistant-mcp",
     "source": "github"
