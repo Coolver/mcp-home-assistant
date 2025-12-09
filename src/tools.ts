@@ -113,6 +113,227 @@ export const tools: Tool[] = [
     },
   },
 
+  // Entity Registry Operations
+  {
+    name: 'ha_get_entity_registry',
+    description: '[READ-ONLY] Get all entities from Entity Registry with metadata (area_id, device_id, name, disabled status, etc.). Safe operation - only reads data. Use this to get area assignments and other metadata not available in ha_list_entities.',
+    inputSchema: {
+      type: 'object',
+      properties: {},
+    },
+  },
+  {
+    name: 'ha_get_entity_registry_entry',
+    description: '[READ-ONLY] Get single entity from Entity Registry with metadata. Safe operation - only reads data.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        entity_id: {
+          type: 'string',
+          description: 'Entity ID (e.g., "climate.bedroom_trv")',
+        },
+      },
+      required: ['entity_id'],
+    },
+  },
+  {
+    name: 'ha_update_entity_registry',
+    description: '[WRITE] Update entity in Entity Registry (name, area_id, disabled status, etc.). MODIFIES entity registry - requires approval.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        entity_id: {
+          type: 'string',
+          description: 'Entity ID to update',
+        },
+        name: {
+          type: 'string',
+          description: 'New friendly name',
+        },
+        area_id: {
+          type: 'string',
+          description: 'Area ID to assign entity to',
+        },
+        disabled: {
+          type: 'boolean',
+          description: 'Disable/enable entity',
+        },
+        new_entity_id: {
+          type: 'string',
+          description: 'New entity_id (rename)',
+        },
+        icon: {
+          type: 'string',
+          description: 'Icon for entity',
+        },
+        aliases: {
+          type: 'array',
+          items: { type: 'string' },
+          description: 'Aliases for entity',
+        },
+      },
+      required: ['entity_id'],
+    },
+  },
+  {
+    name: 'ha_remove_entity_registry_entry',
+    description: '[WRITE] Remove entity from Entity Registry. MODIFIES entity registry - requires approval.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        entity_id: {
+          type: 'string',
+          description: 'Entity ID to remove from registry',
+        },
+      },
+      required: ['entity_id'],
+    },
+  },
+
+  // Area Registry Operations
+  {
+    name: 'ha_get_area_registry',
+    description: '[READ-ONLY] Get all areas from Area Registry. Safe operation - only reads data.',
+    inputSchema: {
+      type: 'object',
+      properties: {},
+    },
+  },
+  {
+    name: 'ha_get_area_registry_entry',
+    description: '[READ-ONLY] Get single area from Area Registry. Safe operation - only reads data.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        area_id: {
+          type: 'string',
+          description: 'Area ID',
+        },
+      },
+      required: ['area_id'],
+    },
+  },
+  {
+    name: 'ha_create_area',
+    description: '[WRITE] Create new area in Area Registry. MODIFIES area registry - requires approval.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        name: {
+          type: 'string',
+          description: 'Area name (e.g., "Living Room")',
+        },
+        aliases: {
+          type: 'array',
+          items: { type: 'string' },
+          description: 'Optional aliases for area',
+        },
+      },
+      required: ['name'],
+    },
+  },
+  {
+    name: 'ha_update_area',
+    description: '[WRITE] Update area in Area Registry. MODIFIES area registry - requires approval.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        area_id: {
+          type: 'string',
+          description: 'Area ID to update',
+        },
+        name: {
+          type: 'string',
+          description: 'New area name',
+        },
+        aliases: {
+          type: 'array',
+          items: { type: 'string' },
+          description: 'New aliases list',
+        },
+      },
+      required: ['area_id'],
+    },
+  },
+  {
+    name: 'ha_delete_area',
+    description: '[WRITE] Delete area from Area Registry. MODIFIES area registry - requires approval.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        area_id: {
+          type: 'string',
+          description: 'Area ID to delete',
+        },
+      },
+      required: ['area_id'],
+    },
+  },
+
+  // Device Registry Operations
+  {
+    name: 'ha_get_device_registry',
+    description: '[READ-ONLY] Get all devices from Device Registry with metadata (area_id, name, manufacturer, model, etc.). Safe operation - only reads data.',
+    inputSchema: {
+      type: 'object',
+      properties: {},
+    },
+  },
+  {
+    name: 'ha_get_device_registry_entry',
+    description: '[READ-ONLY] Get single device from Device Registry. Safe operation - only reads data.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        device_id: {
+          type: 'string',
+          description: 'Device ID',
+        },
+      },
+      required: ['device_id'],
+    },
+  },
+  {
+    name: 'ha_update_device_registry',
+    description: '[WRITE] Update device in Device Registry (area_id, name_by_user, disabled_by, etc.). MODIFIES device registry - requires approval.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        device_id: {
+          type: 'string',
+          description: 'Device ID to update',
+        },
+        area_id: {
+          type: 'string',
+          description: 'Area ID to assign device to',
+        },
+        name_by_user: {
+          type: 'string',
+          description: 'Custom name for device',
+        },
+        disabled_by: {
+          type: 'string',
+          description: 'Disable device (set to "user" to disable)',
+        },
+      },
+      required: ['device_id'],
+    },
+  },
+  {
+    name: 'ha_remove_device_registry_entry',
+    description: '[WRITE] Remove device from Device Registry. MODIFIES device registry - requires approval.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        device_id: {
+          type: 'string',
+          description: 'Device ID to remove from registry',
+        },
+      },
+      required: ['device_id'],
+    },
+  },
+
   // Helper Operations
   {
     name: 'ha_list_helpers',

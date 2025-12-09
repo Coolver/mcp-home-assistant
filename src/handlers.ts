@@ -188,6 +188,76 @@ export const toolHandlers: Record<string, ToolHandler> = {
     return jsonResponse(result);
   },
 
+  // Entity Registry Operations
+  'ha_get_entity_registry': async (client, args) => {
+    const result = await client.getEntityRegistryList();
+    return jsonResponse(result);
+  },
+
+  'ha_get_entity_registry_entry': async (client, args) => {
+    const result = await client.getEntityRegistryEntry(args.entity_id);
+    return jsonResponse(result);
+  },
+
+  'ha_update_entity_registry': async (client, args) => {
+    const { entity_id, ...updateData } = args;
+    const result = await client.updateEntityRegistry(entity_id, updateData);
+    return jsonResponse(result);
+  },
+
+  'ha_remove_entity_registry_entry': async (client, args) => {
+    const result = await client.removeEntityRegistryEntry(args.entity_id);
+    return jsonResponse(result);
+  },
+
+  // Area Registry Operations
+  'ha_get_area_registry': async (client, args) => {
+    const result = await client.getAreaRegistryList();
+    return jsonResponse(result);
+  },
+
+  'ha_get_area_registry_entry': async (client, args) => {
+    const result = await client.getAreaRegistryEntry(args.area_id);
+    return jsonResponse(result);
+  },
+
+  'ha_create_area': async (client, args) => {
+    const result = await client.createAreaRegistryEntry(args.name, args.aliases);
+    return jsonResponse(result);
+  },
+
+  'ha_update_area': async (client, args) => {
+    const result = await client.updateAreaRegistryEntry(args.area_id, args.name, args.aliases);
+    return jsonResponse(result);
+  },
+
+  'ha_delete_area': async (client, args) => {
+    const result = await client.deleteAreaRegistryEntry(args.area_id);
+    return jsonResponse(result);
+  },
+
+  // Device Registry Operations
+  'ha_get_device_registry': async (client, args) => {
+    const result = await client.getDeviceRegistryList();
+    return jsonResponse(result);
+  },
+
+  'ha_get_device_registry_entry': async (client, args) => {
+    const result = await client.getDeviceRegistryEntry(args.device_id);
+    return jsonResponse(result);
+  },
+
+  'ha_update_device_registry': async (client, args) => {
+    const { device_id, ...updateData } = args;
+    const result = await client.updateDeviceRegistry(device_id, updateData);
+    return jsonResponse(result);
+  },
+
+  'ha_remove_device_registry_entry': async (client, args) => {
+    const result = await client.removeDeviceRegistryEntry(args.device_id);
+    return jsonResponse(result);
+  },
+
   // Helper Operations
   'ha_list_helpers': async (client, args) => {
     const result = await client.listHelpers();

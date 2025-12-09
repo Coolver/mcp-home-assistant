@@ -86,6 +86,93 @@ export class HAClient {
     return response.data;
   }
 
+  // Entity Registry API
+  async getEntityRegistryList(): Promise<any[]> {
+    const response = await this.client.get(`/api/registries/entities/list`);
+    return response.data.entities;
+  }
+
+  async getEntityRegistryEntry(entityId: string): Promise<any> {
+    const response = await this.client.get(`/api/registries/entities/${entityId}`);
+    return response.data.entity;
+  }
+
+  async updateEntityRegistry(entityId: string, updateData: any): Promise<any> {
+    const response = await this.client.post(`/api/registries/entities/update`, {
+      entity_id: entityId,
+      ...updateData,
+    });
+    return response.data;
+  }
+
+  async removeEntityRegistryEntry(entityId: string): Promise<any> {
+    const response = await this.client.post(`/api/registries/entities/remove`, {
+      entity_id: entityId,
+    });
+    return response.data;
+  }
+
+  // Area Registry API
+  async getAreaRegistryList(): Promise<any[]> {
+    const response = await this.client.get(`/api/registries/areas/list`);
+    return response.data.areas;
+  }
+
+  async getAreaRegistryEntry(areaId: string): Promise<any> {
+    const response = await this.client.get(`/api/registries/areas/${areaId}`);
+    return response.data.area;
+  }
+
+  async createAreaRegistryEntry(name: string, aliases?: string[]): Promise<any> {
+    const response = await this.client.post(`/api/registries/areas/create`, {
+      name,
+      aliases,
+    });
+    return response.data;
+  }
+
+  async updateAreaRegistryEntry(areaId: string, name?: string, aliases?: string[]): Promise<any> {
+    const response = await this.client.post(`/api/registries/areas/update`, {
+      area_id: areaId,
+      name,
+      aliases,
+    });
+    return response.data;
+  }
+
+  async deleteAreaRegistryEntry(areaId: string): Promise<any> {
+    const response = await this.client.post(`/api/registries/areas/delete`, {
+      area_id: areaId,
+    });
+    return response.data;
+  }
+
+  // Device Registry API
+  async getDeviceRegistryList(): Promise<any[]> {
+    const response = await this.client.get(`/api/registries/devices/list`);
+    return response.data.devices;
+  }
+
+  async getDeviceRegistryEntry(deviceId: string): Promise<any> {
+    const response = await this.client.get(`/api/registries/devices/${deviceId}`);
+    return response.data.device;
+  }
+
+  async updateDeviceRegistry(deviceId: string, updateData: any): Promise<any> {
+    const response = await this.client.post(`/api/registries/devices/update`, {
+      device_id: deviceId,
+      ...updateData,
+    });
+    return response.data;
+  }
+
+  async removeDeviceRegistryEntry(deviceId: string): Promise<any> {
+    const response = await this.client.post(`/api/registries/devices/remove`, {
+      device_id: deviceId,
+    });
+    return response.data;
+  }
+
   // Helpers API
   async createHelper(type: string, config: any, commitMessage?: string): Promise<any> {
     const response = await this.client.post(`/api/helpers/create`, {
