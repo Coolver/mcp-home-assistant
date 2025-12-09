@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.2.13] - 2025-12-06
+
+### ✨ NEW: Entity/Area/Device Registry API Support
+
+**Full access to Home Assistant registries with metadata and area assignments**
+
+- ✅ **Entity Registry API**: Get all entities with metadata (area_id, device_id, name, disabled status, etc.)
+- ✅ **Area Registry API**: Full CRUD operations for areas (list, get, create, update, delete)
+- ✅ **Device Registry API**: Get and update devices with metadata (area_id, manufacturer, model, etc.)
+- ✅ **12 new MCP tools** for registry operations (read and write)
+- ✅ **Solves problem for users with many entities**: Now AI can get complete picture with area assignments
+
+**New MCP Tools:**
+- Entity Registry: `ha_get_entity_registry`, `ha_get_entity_registry_entry`, `ha_update_entity_registry`, `ha_remove_entity_registry_entry`
+- Area Registry: `ha_get_area_registry`, `ha_get_area_registry_entry`, `ha_create_area`, `ha_update_area`, `ha_delete_area`
+- Device Registry: `ha_get_device_registry`, `ha_get_device_registry_entry`, `ha_update_device_registry`, `ha_remove_device_registry_entry`
+
+**Why This Matters:**
+- `/api/entities/list` only returns states, missing area assignments and metadata
+- Entity Registry provides area_id, device_id, custom names, disabled status
+
+**Requires:** HA Vibecode Agent with Entity/Area/Device Registry API endpoints
+
 ## [3.2.12] - 2025-12-06
 
 ### 🔧 Update

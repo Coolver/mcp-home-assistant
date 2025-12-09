@@ -6,12 +6,12 @@
     "url": "https://github.com/Coolver/home-assistant-mcp",
     "source": "github"
   },
-  "version": "3.2.12",
+  "version": "3.2.13",
   "packages": [
     {
       "registryType": "npm",
       "identifier": "@coolver/home-assistant-mcp",
-      "version": "3.2.12",
+      "version": "3.2.13",
       "transport": {
         "type": "stdio"
       },
