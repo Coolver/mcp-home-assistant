@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.2.18] - 2025-12-22
+
+### 🔧 Maintenance
+
+- ✅ **Documentation**: Added comment about git tools in migratedToolNames list
+- ✅ **Code organization**: Clarified that git tools are in tools.ts (not migrated to separate module yet)
+
 ## [3.2.17] - 2025-12-22
 
 ### ✨ Git Versioning: Manual Commit Mode Support
