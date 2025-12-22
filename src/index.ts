@@ -103,9 +103,10 @@ async function main() {
   // Test connection on startup
   try {
     const health = await haClient.healthCheck();
-    console.log(`✅ Connected to HA Vibecode Agent v${health.version}`);
-    console.log(`📁 Config path: ${health.config_path}`);
-    console.log(`🔄 Git versioning auto: ${health.git_versioning_auto}`);
+    // Use stderr for informational messages to avoid breaking JSON protocol on stdout
+    console.error(`✅ Connected to HA Vibecode Agent v${health.version}`);
+    console.error(`📁 Config path: ${health.config_path}`);
+    console.error(`🔄 Git versioning auto: ${health.git_versioning_auto}`);
   } catch (error: any) {
     console.error('❌ Failed to connect to HA Vibecode Agent');
     console.error(`URL: ${HA_AGENT_URL}`);
@@ -119,7 +120,8 @@ async function main() {
 
   const transport = new StdioServerTransport();
   await server.connect(transport);
-  console.log('🚀 MCP Home Assistant server running');
+  // Use stderr for informational messages to avoid breaking JSON protocol on stdout
+  console.error('🚀 MCP Home Assistant server running');
 }
 
 main().catch((error) => {
