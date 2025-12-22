@@ -15,7 +15,7 @@ const HA_AGENT_URL = process.env.HA_AGENT_URL || 'http://homeassistant.local:809
 const HA_AGENT_KEY = process.env.HA_AGENT_KEY;
 
 if (!HA_AGENT_KEY) {
-  console.error('Error: HA_AGENT_KEY environment variable is required');
+  console.error('❌ Error: HA_AGENT_KEY environment variable is required');
   console.error('Please set it in Cursor: Settings → Tools & MCP → Add Custom MCP Server');
   console.error('Or manually in ~/.cursor/mcp.json');
   process.exit(1);
@@ -103,9 +103,9 @@ async function main() {
   // Test connection on startup
   try {
     const health = await haClient.healthCheck();
-    console.error(`✅ Connected to HA Vibecode Agent v${health.version}`);
-    console.error(`📁 Config path: ${health.config_path}`);
-    console.error(`🔄 Git enabled: ${health.git_enabled}`);
+    console.log(`✅ Connected to HA Vibecode Agent v${health.version}`);
+    console.log(`📁 Config path: ${health.config_path}`);
+    console.log(`🔄 Git versioning auto: ${health.git_versioning_auto}`);
   } catch (error: any) {
     console.error('❌ Failed to connect to HA Vibecode Agent');
     console.error(`URL: ${HA_AGENT_URL}`);
@@ -119,7 +119,7 @@ async function main() {
 
   const transport = new StdioServerTransport();
   await server.connect(transport);
-  console.error('🚀 MCP Home Assistant server running');
+  console.log('🚀 MCP Home Assistant server running');
 }
 
 main().catch((error) => {
