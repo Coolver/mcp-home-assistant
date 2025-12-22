@@ -31,7 +31,7 @@ const haClient = new HAClient({
 const server = new Server(
   {
     name: 'home-assistant-mcp',
-    version: '3.2.18',
+    version: '3.2.19',
   },
   {
     capabilities: {

@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.2.19] - 2025-12-22
+
+### 🐛 Bug Fix
+
+- ✅ **Fixed MCP JSON protocol errors**: Changed `console.log()` to `console.error()` for informational messages
+  - Prevents "Unexpected token" errors in MCP Cursor
+  - MCP protocol requires clean JSON on stdout, informational messages now go to stderr
+  - Fixes connection errors when MCP server starts
+
 ## [3.2.18] - 2025-12-22
 
 ### 🔧 Maintenance

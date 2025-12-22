@@ -1,6 +1,6 @@
 {
   "name": "@coolver/home-assistant-mcp",
-  "version": "3.2.18",
+  "version": "3.2.19",
   "mcpName": "io.github.Coolver/home-assistant-mcp",
   "mcpDisplayName": "Home Assistant Vibecode MCP",
   "description": "Enable Cursor, VS Code, Claude Code or any MCP-enabled IDE to help you vibecode and manage Home Assistant: create automations, design dashboards, tweak themes, modify configs, and deploy changes using natural language",
