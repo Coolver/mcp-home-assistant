@@ -670,6 +670,66 @@ export class HAClient {
     return response.data;
   }
 
+  async dashboardEnhancementsStatus(): Promise<any> {
+    const response = await this.client.get(`/api/lovelace/dashboards/enhancements/status`);
+    return response.data;
+  }
+
+  async installDashboardEnhancements(): Promise<any> {
+    const response = await this.client.post(`/api/lovelace/dashboards/enhancements/install`);
+    return response.data;
+  }
+
+  async listDashboards(): Promise<any> {
+    const response = await this.client.get(`/api/lovelace/dashboards/list`);
+    return response.data;
+  }
+
+  async listBundledSkills(): Promise<any> {
+    const response = await this.client.get(`/api/skills/bundled`);
+    return response.data;
+  }
+
+  async getBundledSkill(skillName: string): Promise<any> {
+    const response = await this.client.get(`/api/skills/bundled/${encodeURIComponent(skillName)}`);
+    return response.data;
+  }
+
+  async installBundledSkill(skillName: string, targetSubdir?: string): Promise<any> {
+    const response = await this.client.post(
+      `/api/skills/bundled/${encodeURIComponent(skillName)}/install`,
+      null,
+      { params: { target_subdir: targetSubdir } }
+    );
+    return response.data;
+  }
+
+  async readDashboard(dashboardId: string): Promise<any> {
+    const response = await this.client.get(`/api/lovelace/dashboards/${encodeURIComponent(dashboardId)}`);
+    return response.data;
+  }
+
+  async exportDashboard(dashboardId: string, filename?: string): Promise<any> {
+    const response = await this.client.post(`/api/lovelace/dashboards/${encodeURIComponent(dashboardId)}/export`, {
+      filename,
+    });
+    return response.data;
+  }
+
+  async applyDashboardById(
+    dashboardId: string,
+    dashboardConfig: any,
+    createBackup: boolean = true,
+    commitMessage?: string
+  ): Promise<any> {
+    const response = await this.client.post(`/api/lovelace/dashboards/${encodeURIComponent(dashboardId)}/apply`, {
+      dashboard_config: dashboardConfig,
+      create_backup: createBackup,
+      commit_message: commitMessage,
+    });
+    return response.data;
+  }
+
   async applyDashboard(dashboardConfig: any, createBackup: boolean = true, filename: string = 'ai-dashboard.yaml', registerDashboard: boolean = true, commitMessage?: string): Promise<any> {
     const response = await this.client.post(`/api/lovelace/apply`, {
       dashboard_config: dashboardConfig,

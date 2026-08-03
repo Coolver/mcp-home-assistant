@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [Unreleased]
+
+### Dashboard: storage + YAML unified API
+
+- `ha_list_dashboards`, `ha_read_dashboard`, `ha_export_dashboard`, `ha_apply_dashboard_by_id`
+- `ha_dashboard_enhancements_status`, `ha_install_dashboard_enhancements` (optional Mushroom via HACS)
+- `ha_list_bundled_skills`, `ha_get_bundled_skill`, `ha_install_bundled_skill`
+- Pair with Vibecode Agent build that exposes `/api/lovelace/dashboards/*` and `/api/skills/bundled/*`
+
 ## [3.2.31] - 2026-05-12
 
 **Pair with Vibecode Agent 2.10.46+.**

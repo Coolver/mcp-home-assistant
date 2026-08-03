@@ -75,7 +75,11 @@ function generateCommitMessage(operation: string, args: any): string {
         return `Create theme: ${args.description}`;
       
       case 'apply_dashboard':
+      case 'apply_dashboard_by_id':
         return `Update dashboard: ${args.description}`;
+
+      case 'export_dashboard':
+        return `Export dashboard: ${args.description || args.dashboard_id}`;
       
       default:
         return args.description;
@@ -143,6 +147,12 @@ function generateCommitMessage(operation: string, args: any): string {
     case 'apply_dashboard':
       const dashboardName = args.filename || 'dashboard';
       return `Update dashboard: ${dashboardName}`;
+
+    case 'apply_dashboard_by_id':
+      return `Update dashboard: ${args.dashboard_id}`;
+
+    case 'export_dashboard':
+      return `Export dashboard: ${args.dashboard_id}`;
 
     case 'delete_dashboard':
       return `Remove dashboard: ${args.filename}`;
@@ -562,6 +572,41 @@ export const toolHandlers: Record<string, ToolHandler> = {
   },
 
   // Dashboard Operations
+  'ha_dashboard_enhancements_status': async (client, args) => {
+    const result = await client.dashboardEnhancementsStatus();
+    return jsonResponse(result);
+  },
+
+  'ha_install_dashboard_enhancements': async (client, args) => {
+    const result = await client.installDashboardEnhancements();
+    return jsonResponse(result);
+  },
+
+  'ha_list_dashboards': async (client, args) => {
+    const result = await client.listDashboards();
+    return jsonResponse(result);
+  },
+
+  'ha_list_bundled_skills': async (client, args) => {
+    const result = await client.listBundledSkills();
+    return jsonResponse(result);
+  },
+
+  'ha_get_bundled_skill': async (client, args) => {
+    const result = await client.getBundledSkill(args.skill_name);
+    return jsonResponse(result);
+  },
+
+  'ha_install_bundled_skill': async (client, args) => {
+    const result = await client.installBundledSkill(args.skill_name, args.target_subdir);
+    return jsonResponse(result);
+  },
+
+  'ha_read_dashboard': async (client, args) => {
+    const result = await client.readDashboard(args.dashboard_id);
+    return jsonResponse(result);
+  },
+
   'ha_analyze_entities_for_dashboard': async (client, args) => {
     const result = await client.analyzeEntitiesForDashboard(args);
     return jsonResponse(result);
@@ -569,6 +614,23 @@ export const toolHandlers: Record<string, ToolHandler> = {
 
   'ha_preview_dashboard': async (client, args) => {
     const result = await client.previewDashboard();
+    return jsonResponse(result);
+  },
+
+  'ha_export_dashboard': async (client, args) => {
+    const commitMessage = generateCommitMessage('export_dashboard', args);
+    const result = await client.exportDashboard(args.dashboard_id, args.filename);
+    return jsonResponse(result);
+  },
+
+  'ha_apply_dashboard_by_id': async (client, args) => {
+    const commitMessage = generateCommitMessage('apply_dashboard_by_id', args);
+    const result = await client.applyDashboardById(
+      args.dashboard_id,
+      args.dashboard_config,
+      args.create_backup,
+      commitMessage
+    );
     return jsonResponse(result);
   },
 
